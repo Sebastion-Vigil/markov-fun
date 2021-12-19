@@ -34,5 +34,5 @@ def Markov(text_file): # txt file 2 parse
     return ' '.join([i for i in sentence_data])
 
 
-markov_txt  = Markov("infinite_jest_excerpt.txt")
+markov_txt k = Markov("infinite_jest_excerpt.txt")
 print(markov_txt)
