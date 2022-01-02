@@ -6,8 +6,8 @@ def Markov(text_file): # txt file 2 parse
 
     data = [i for i in data.split(' ') if i != ''] # list of all words
     data = [i.lower() for i in data if i.isalpha()] # remove punctuation
-
-    markov = {i:[] for i in data}
+    # print(data)
+    markov = {i:[] for i in data} # need 2 print immediately
 
     pos = 0
     first = True
