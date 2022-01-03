@@ -6,21 +6,15 @@ def Markov(text_file): # txt file 2 parse
 
     data = [i for i in data.split(' ') if i != ''] # list of all words
     data = [i.lower() for i in data if i.isalpha()] # remove punctuation
-    # print(data)
     markov = {i:[] for i in data} # need 2 print immediately
 
     pos = 0
-    first = True
    # add a word to the word-key's list if it immediately follows that word
     while pos < len(data) - 1:
         markov[data[pos]].append(data[pos+1])
         pos += 1
         # create another dict for the seed to match up with
         new = {k:v for k,v in zip(range(len(markov)), [i for i in markov])}
-        if first:
-            print("MARKOV: ", markov)
-            print("NEW: ", new)
-            first = False
         # random length
         length_sentence = random.randint(15, 20)
         # random start point
@@ -35,9 +29,6 @@ def Markov(text_file): # txt file 2 parse
         next_word = markov[current_word][next_index]
         sentence_data.append(next_word)
         current_word = next_word
-
-    print("FINAL MARKOV: ", markov)
-    print("FINAL NEW: ", new)
 
     return ' '.join([i for i in sentence_data])
 
