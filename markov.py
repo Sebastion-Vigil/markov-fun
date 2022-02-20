@@ -12,8 +12,9 @@ def Markov(text_file): # txt file 2 parse
     length_sentence = random.randint(15, 20) # random length
     new = {k:v for k,v in zip(range(len(markov)), [i for i in markov])} # create another dict for the seed to match up with
     seed = random.randint(0, len(new) - 1) # random start point
-    sentence_data = [new[seed]] # 1st word & strtng pnt (will be answer)
+    sentence_data = [new[seed]] # answer = [first_word[starting_point]]
     current_word = new[seed]
+    
     while pos < len(data) - 1: # add a word to the word-key's list if it immediately follows that word
         markov[data[pos]].append(data[pos+1])
         pos += 1
